@@ -7,7 +7,7 @@ import { PlaceholderEmbed, PlaceholderEmbedProps } from '../placeholder/Placehol
 import { generateUUID } from '../uuid';
 import { EmbedStyle } from './EmbedStyle';
 
-const embedJsScriptSrc = '//www.instagram.com/embed.js';
+const embedJsScriptSrc = 'https://www.instagram.com/embed.js';
 const SDK_ID = "react-social-media-embed--instagram-sdk";
 const minPlaceholderWidth = 328;
 const defaultPlaceholderHeight = 372;

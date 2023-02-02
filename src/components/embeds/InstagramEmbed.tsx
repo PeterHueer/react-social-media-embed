@@ -8,6 +8,7 @@ import { generateUUID } from '../uuid';
 import { EmbedStyle } from './EmbedStyle';
 
 const embedJsScriptSrc = '//www.instagram.com/embed.js';
+const SDK_ID = "react-social-media-embed--instagram-sdk";
 const minPlaceholderWidth = 328;
 const defaultPlaceholderHeight = 372;
 const borderRadius = 3;
@@ -92,8 +93,13 @@ export const InstagramEmbed = ({
   // Load Script Stage
   React.useEffect(() => {
     if (stage === LOAD_SCRIPT_STAGE) {
+      if (frm.document?.head.children.namedItem(SDK_ID)) {
+        setStage(CONFIRM_SCRIPT_LOADED_STAGE);
+        return;
+      }
       if (frm.document) {
         const scriptElement = frm.document.createElement('script');
+        scriptElement.setAttribute('id', SDK_ID);
         scriptElement.setAttribute('src', embedJsScriptSrc);
         frm.document.head.appendChild(scriptElement);
         setStage(CONFIRM_SCRIPT_LOADED_STAGE);

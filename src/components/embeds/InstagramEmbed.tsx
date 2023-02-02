@@ -100,6 +100,7 @@ export const InstagramEmbed = ({
       if (frm.document) {
         const scriptElement = frm.document.createElement('script');
         scriptElement.setAttribute('id', SDK_ID);
+        scriptElement.setAttribute('type', "text/javascript");
         scriptElement.setAttribute('src', embedJsScriptSrc);
         frm.document.head.appendChild(scriptElement);
         setStage(CONFIRM_SCRIPT_LOADED_STAGE);

@@ -57,7 +57,7 @@ export const InstagramEmbed = ({
   scriptLoadDisabled = false,
   retryDelay = 5000,
   retryDisabled = false,
-  igVersion = '14',
+  igVersion = '16',
   frame = undefined,
   debug = false,
   ...divProps
